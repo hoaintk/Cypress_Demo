@@ -1,8 +1,7 @@
-const { defineConfig } = require('cypress') // ← Bỏ dấu chấm
+const { defineConfig } = require('cypress') 
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://www.saucedemo.com/',
     video: false,
     reporter: 'mochawesome',
     reporterOptions: {
@@ -12,7 +11,8 @@ module.exports = defineConfig({
       json: true,
       timestamp: 'mmddyyyy_HHMMss'
     },
-    specPattern: 'cypress/e2e/tests/**/*.cy.{js,jsx,ts,tsx}', 
-    supportFile: 'cypress/e2e/support/e2e.js' 
+    supportFile: 'cypress/support/support.js',
+    specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}'
   }
 })
+

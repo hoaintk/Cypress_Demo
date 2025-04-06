@@ -3,14 +3,14 @@ import BasePage from '../../support/BasePage'
 
 class LoginPage extends BasePage {
   elements = {
-    usernameInput: '//input[@id="user_name"]',
-    passwordInput: '//input[@id="password"]',
-    loginButton: '//input[@id="login-button"]'
+    usernameInput: '#user-name',
+    passwordInput: '#password',
+    loginButton: '#login-button'
   }
 
   // ===== Methods =====
   visit() {
-    super.navigate() 
+    this.navigate('https://www.saucedemo.com/') 
   }
 
   enterUsername(username) {
