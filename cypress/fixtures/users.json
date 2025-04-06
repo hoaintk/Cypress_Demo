@@ -1,0 +1,13 @@
+{
+  
+    "login_pass": {
+      "username": "standard_user",
+      "password": "secret_sauce"
+    },
+    "login_fail": {
+      "username": "secret_sauce",
+      "password": "wrong_pass"
+    }
+  
+
+}

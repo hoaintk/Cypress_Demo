@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test": "cypress run",
+    "test:ui": "cypress open",
+    "fix-setup": "mkdir -p cypress/{e2e/tests,e2e/support,fixtures} && touch cypress/e2e/support/e2e.js"
+  },
+  "devDependencies": {
+    "cypress": "^12.0.0",
+    "mochawesome": "^7.1.3"
+  }
+}
