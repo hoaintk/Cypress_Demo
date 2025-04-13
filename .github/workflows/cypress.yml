@@ -28,7 +28,7 @@ jobs:
           cp -r cypress/reports/html cypress-artifacts/
 
       - name: Upload HTML report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: cypress-report
           path: cypress-artifacts/html
