@@ -1,11 +1,14 @@
 class BasePage {
 
-  navigate(path) {
+  navigate(path = '/') {
     cy.visit(path, {
       failOnStatusCode: false,
       timeout: 60000,
-    })
-  }
+      onBeforeLoad(win) {
+        delete win.navigator.__proto__.serviceWorker;
+      },
+    });
+  } 
 
     reloadPage() {
       cy.reload()

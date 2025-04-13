@@ -2,11 +2,16 @@
   "scripts": {
     "test": "cypress run",
     "test:ui": "cypress open",
-    "fix-setup": "mkdir -p cypress/{e2e/tests,e2e/support,fixtures} && touch cypress/e2e/support/e2e.js"
+    "fix-setup": "mkdir -p cypress/{e2e/tests,e2e/support,fixtures} && touch cypress/e2e/support/e2e.js",
+    "report:generate": "npx mochawesome-merge cypress/reports/*.json > mochawesome.json && npx marge mochawesome.json -f report -o cypress/reports/html",
+    "report:open": "open cypress/reports/html/report.html",
+    "test:report": "npm run test && npm run report:generate && npm run report:open"
   },
   "devDependencies": {
     "cypress": "^12.0.0",
     "cypress-xpath": "^2.0.1",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }

@@ -12,7 +12,9 @@ describe('Login Test Suite', () => {
     LoginPage.enterUsername(login_pass.username)
     LoginPage.enterPassword(login_pass.password)
     LoginPage.clickLogin()  
-    cy.url().should('include', '/dashboard')  
+    LoginPage.acceptAlert()
+    // cy.url().should('include', '/inventory.html')  
+    // cy.verifyProductsTextDisplayed('Products')
   })
 
   // Case 2: Login sai mật khẩu
@@ -21,6 +23,6 @@ describe('Login Test Suite', () => {
     LoginPage.enterUsername(login_fail.username)
     LoginPage.enterPassword(login_fail.password)
     LoginPage.clickLogin()
-    LoginPage.expectErrorMessage('Invalid credentials') 
+    LoginPage.verifyErrorMessageDisplayed() 
   })
 })

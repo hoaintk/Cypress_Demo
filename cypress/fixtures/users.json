@@ -7,7 +7,16 @@
     "login_fail": {
       "username": "secret_sauce",
       "password": "wrong_pass"
+    },
+
+    "lockedUser": {
+      "username": "locked_out_user",
+      "password": "secret_sauce"
+    },
+
+    "wrongPassword": {
+      "username": "standard_user",
+      "password": "wrong_password"
     }
   
-
 }

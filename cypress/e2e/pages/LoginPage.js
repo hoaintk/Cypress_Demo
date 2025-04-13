@@ -5,12 +5,14 @@ class LoginPage extends BasePage {
   elements = {
     usernameInput: '#user-name',
     passwordInput: '#password',
-    loginButton: '#login-button'
+    loginButton: '#login-button',
+    productsText: '.title',
+    errorMessage: 'h3[data-test="error"]'
   }
 
   // ===== Methods =====
   visit() {
-    this.navigate('https://www.saucedemo.com/') 
+    this.navigate('/');
   }
 
   enterUsername(username) {
@@ -27,6 +29,18 @@ class LoginPage extends BasePage {
 
   expectErrorMessage(text) {
     this.verifyText(this.elements.errorMessage, text)
+  }
+
+  verifyProductsTextDisplayed(expectedText) {
+    this.verifyText(this.elements.productsText, expectedText)
+  }
+
+  verifyErrorMessageDisplayed() {
+    this.verifyElementVisible(this.elements.errorMessage)
+  }
+
+  acceptAlert() {
+    this.acceptAlert
   }
 }
 
