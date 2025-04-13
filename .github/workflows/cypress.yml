@@ -1,20 +1,16 @@
 name: Run Cypress Tests
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push]
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
