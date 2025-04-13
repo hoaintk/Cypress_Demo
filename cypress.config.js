@@ -7,15 +7,15 @@ module.exports = defineConfig({
     supportFile: 'cypress/support/support.js',
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
     chromeWebSecurity: false,
-    pageLoadTimeout: 100000,
-
+    pageLoadTimeout: 100000
+  },
     
-    reporter: 'mochawesome',
-    reporterOptions: {
-      reportDir: 'cypress/reports',
-      overwrite: false,
-      html: false,
-      json: true
-    }
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/reports',
+    overwrite: false,
+    html: true,
+    json: true,
+    timestamp: 'mmddyyyy_HHMMss'
   }
-});
+})
