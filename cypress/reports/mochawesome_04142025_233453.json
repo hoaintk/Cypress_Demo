@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-14T16:34:16.166Z",
+    "end": "2025-04-14T16:34:53.462Z",
+    "duration": 37296,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2d7da5ca-58b7-4f87-a953-620bc1d7c065",
+      "title": "",
+      "fullFile": "cypress/e2e/tests/demo.cy.js",
+      "file": "cypress/e2e/tests/demo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a1a6cddf-077f-416a-a9d2-059f32676a49",
+          "title": "Login Test with SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login thành công với account hợp lệ",
+              "fullTitle": "Login Test with SauceDemo Login thành công với account hợp lệ",
+              "timedOut": null,
+              "duration": 13480,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage_POM.default.enterUsername('standard_user');\n_LoginPage_POM.default.enterPassword('secret_sauce');\n_LoginPage_POM.default.clickLoginButon();\n//cy.url() là lấy url hiện tại\ncy.url().should('include', '/inventory.html');\ncy.get('[class=\"title\"]').should('contain.text', 'Products');",
+              "err": {},
+              "uuid": "e67e361b-5a01-4afa-a152-747ec57035ff",
+              "parentUUID": "a1a6cddf-077f-416a-a9d2-059f32676a49",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login sai mật khẩu",
+              "fullTitle": "Login Test with SauceDemo Login sai mật khẩu",
+              "timedOut": null,
+              "duration": 6026,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage_POM.default.enterUsername('standard_user');\n_LoginPage_POM.default.enterPassword('wrongPassword');\n_LoginPage_POM.default.clickLoginButon();\n_LoginPage_POM.default.assertErrorMessage('Epic sadface: Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "245adbdf-da82-4069-939c-c0d983fc4445",
+              "parentUUID": "a1a6cddf-077f-416a-a9d2-059f32676a49",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login thiếu username",
+              "fullTitle": "Login Test with SauceDemo Login thiếu username",
+              "timedOut": null,
+              "duration": 2959,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage_POM.default.enterPassword('secret_sauce');\n_LoginPage_POM.default.clickLoginButon();\n_LoginPage_POM.default.assertErrorMessage('Epic sadface: Username is required');",
+              "err": {},
+              "uuid": "b5d886fb-9e91-401c-a1c7-3bc9465f5e75",
+              "parentUUID": "a1a6cddf-077f-416a-a9d2-059f32676a49",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login với user không hợp lệ",
+              "fullTitle": "Login Test with SauceDemo Login với user không hợp lệ",
+              "timedOut": null,
+              "duration": 4405,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('users').then(userData => {\n  const {\n    username,\n    password\n  } = userData.lockedUser;\n  _LoginPage_POM.default.enterUsername(username);\n  _LoginPage_POM.default.enterPassword(password);\n  _LoginPage_POM.default.clickLoginButon();\n  _LoginPage_POM.default.assertErrorMessage('Epic sadface: Sorry, this user has been locked out.');\n});",
+              "err": {},
+              "uuid": "e187ff04-0b7c-4725-b155-3cf0131d1658",
+              "parentUUID": "a1a6cddf-077f-416a-a9d2-059f32676a49",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login thành công với account hợp lệ dùng command",
+              "fullTitle": "Login Test with SauceDemo Login thành công với account hợp lệ dùng command",
+              "timedOut": null,
+              "duration": 5355,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginUsingFixtures('standard_user', 'secret_sauce');\n//cy.url() là lấy url hiện tại\ncy.url().should('include', '/inventory.html');\ncy.get('[class=\"title\"]').should('contain.text', 'Products');",
+              "err": {},
+              "uuid": "a9ef566e-b485-468b-b666-149179ece73a",
+              "parentUUID": "a1a6cddf-077f-416a-a9d2-059f32676a49",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login với password không hợp lệ dùng command",
+              "fullTitle": "Login Test with SauceDemo Login với password không hợp lệ dùng command",
+              "timedOut": null,
+              "duration": 2765,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('users').then(userData => {\n  const {\n    username,\n    password\n  } = userData.wrongPassword;\n  _LoginPage_POM.default.enterUsername(username);\n  _LoginPage_POM.default.enterPassword(password);\n  _LoginPage_POM.default.clickLoginButon();\n  _LoginPage_POM.default.assertErrorMessage('Epic sadface: Username and password do not match any user in this service');\n});",
+              "err": {},
+              "uuid": "7994c228-e425-4528-ba77-def6303eb73a",
+              "parentUUID": "a1a6cddf-077f-416a-a9d2-059f32676a49",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e67e361b-5a01-4afa-a152-747ec57035ff",
+            "245adbdf-da82-4069-939c-c0d983fc4445",
+            "b5d886fb-9e91-401c-a1c7-3bc9465f5e75",
+            "e187ff04-0b7c-4725-b155-3cf0131d1658",
+            "a9ef566e-b485-468b-b666-149179ece73a",
+            "7994c228-e425-4528-ba77-def6303eb73a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 34990,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
