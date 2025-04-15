@@ -1,6 +1,6 @@
 name: Run Cypress Tests
 
-on: [push]
+on: push
 
 jobs:
   cypress-run:
@@ -16,13 +16,12 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Install Cypress binary
+        run: npx cypress install
+        env:
+          CYPRESS_INSTALL_BINARY: 1
 
       - name: Run Cypress tests
         run: npm run test
-
-      - name: Generate HTML report
-        run: |
-          npm run report:generate
-          mkdir -p cypress-artifacts
-          cp -r cypress/reports/html cypress-artifacts/
